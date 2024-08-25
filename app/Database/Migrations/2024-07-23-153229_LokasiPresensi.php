@@ -46,7 +46,7 @@ class LokasiPresensi extends Migration
             'jam_masuk' => [
                 'type'       => 'TIME',
             ],
-            'jam_keluar' => [
+            'jam_pulang' => [
                 'type'       => 'TIME',
             ],
         ]);

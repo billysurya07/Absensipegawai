@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/main.css') ?>" />
     <!-- tabler icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/1.35.0/iconfont/tabler-icons.min.css" integrity="sha512-tpsEzNMLQS7w9imFSjbEOHdZav3/aObSESAL1y5jyJDoICFF2YwEdAHOPdOr1t+h8hTzar0flphxR76pd0V1zQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- Data Tabels -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.2/css/dataTables.dataTables.css" />
+    <!-- leafleat css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
   </head>
   <body>
     <!-- ======== Preloader =========== -->
@@ -27,32 +33,32 @@
     <aside class="sidebar-nav-wrapper">
       <div class="navbar-logo">
         <a href="index.html">
-          <img  src="<?= base_url('assets/images/logo/logo.svg') ?>" alt="logo" />
+          <img  src="<?= base_url('assets/images/logo/logo_pangkalan.jpg') ?>" alt="logo" />
         </a>
       </div>
       <nav class="sidebar-nav">
         <ul>
         <li class="nav-item mb-2">
-            <a href="invoice.html">
+            <a href="<?= base_url('pegawai/home') ?>">
               <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
               <span class="text">Dasboard</span>
             </a>
           </li>
              <li class="nav-item mb-2">
-            <a href="invoice.html">
+            <a href="<?= base_url('pegawai/rekap_presensi') ?>">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-report-analytics"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 17v-5" /><path d="M12 17v-1" /><path d="M15 17v-3" /></svg>
               <span class="text">Rekap Presensi</span>
             </a>
           </li>
           <li class="nav-item nav-item-has-children mb-2">
           <li class="nav-item mb-2">
-            <a href="invoice.html">
+            <a href="<?= base_url('pegawai/ketidakhadiran') ?>">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h3.5" /><path d="M22 22l-5 -5" /><path d="M17 22l5 -5" /></svg>
               <span class="text">Ketidakhadiran</span>
             </a>
           </li>
           <li class="nav-item mb-2">
-            <a href="invoice.html">
+            <a href="<?= base_url('logout')?>">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" /><path d="M15 12h-12l3 -3" /><path d="M6 15l-3 -3" /></svg>
               <span class="text">Logout</span>
             </a>
@@ -203,5 +209,53 @@
     <script src="<?= base_url('assets/js/jvectormap.min.js')?> "></script>
     <script src="<?= base_url('assets/js/polyfill.js')?> "></script>
     <script src="<?= base_url('assets/js/main.js')?> "></script>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- data Tables -->
+    <script src="https://cdn.datatables.net/2.1.2/js/dataTables.js"></script>
+    <!-- leaflet js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <script>
+       //  data Tables
+       $(document).ready( function () {
+          $('#datatables').DataTable();
+      } );
+      // sweet Alert Gagal
+      $(function(){
+      <?php if(session()->has('gagal')) { ?>
+        Swal.fire({
+        icon: "error",
+        title: "Maaf",
+        text: "<?= session()->get('gagal') ?>",
+        
+        });
+        <?php } ?>
+    });
+     // Sweet Alert Konfirmasi Hapus
+     $('.tombol-hapus').on('click', function(){
+          var getLink = $(this).attr('href');
+                Swal.fire({
+              title: "Yakin Hapus?",
+              text: "Data Yang Sudah Sudah Dihapus Tidak Bisa Dikembalikan",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = getLink
+              }
+            });
+              return false
+        });
+    </script>
+
+
   </body>
 </html>

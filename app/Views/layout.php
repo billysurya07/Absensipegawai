@@ -226,5 +226,8 @@
     <script src="<?= base_url('assets/js/jvectormap.min.js')?> "></script>
     <script src="<?= base_url('assets/js/polyfill.js')?> "></script>
     <script src="<?= base_url('assets/js/main.js')?> "></script>
+
+    <!-- ======= jquery ========= -->
+    
   </body>
 </html>

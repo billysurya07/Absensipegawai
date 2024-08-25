@@ -10,6 +10,7 @@ class Login extends BaseController
 {
     public function index()
     {
+        
         $data = [
             'validation' => service('validation')
         ];
@@ -41,7 +42,8 @@ class Login extends BaseController
 
                 $session_data = [
                     'logged_in' => TRUE,
-                    'role_id' => $user['role']
+                    'role_id' => $user['role'],
+                    'id_pegawai' => $user['id']
                 ];
                 $session->set($session_data);
                 // Redirect berdasarkan role
